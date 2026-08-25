@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoblog — Otomatis dari AI</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+    article { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+    .date { color: #888; font-size: 0.9rem; }
+    .title { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .excerpt { color: #555; margin-bottom: 0.5rem; }
+    a.read-more { color: #555; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>Autoblog</h1>
+  <div id="feed">Loading...</div>
+  <script>
+    fetch('/posts.json?'+new Date().getTime())
+      .then(r => r.json())
+      .then(posts => {
+        const feed = document.getElementById('feed');
+        if (!posts.length) {
+          feed.textContent = 'Masih kosong, tunggu artikel berikutnya.';
+          return;
+        }
+        feed.innerHTML = posts.map(p => `
+          <article>
+            <div class="date">${p.date}</div>
+            <h2 class="title">${p.title}</h2>
+            <p class="excerpt">${p.excerpt}</p>
+            <a class="read-more" href="/posts/${p.slug}.html">Baca selengkapnya →</a>
+          </article>
+        `).join('');
+      })
+      .catch(e => document.getElementById('feed').textContent = 'Gagal memuat data.');
+  </script>
+</body>
+</html>
