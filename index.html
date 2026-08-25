@@ -201,6 +201,17 @@
       color: var(--color-accent);
     }
     .post .more::after { content: " →"; }
+    .post .thumb {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      background: var(--color-muted);
+      transition: opacity .2s ease;
+    }
+    .post:hover .thumb { opacity: .92; }
 
     /* ============ ARTICLE PAGE ============ */
     .article {
@@ -350,7 +361,11 @@
       label.textContent = 'Artikel terbaru (' + posts.length + ')';
       feed.innerHTML = posts.map((p, i) => {
         const d = fmtDate(p.date);
+        const thumb = p.image
+          ? '<img class="thumb" src="' + p.image + '" alt="" loading="lazy">'
+          : '';
         return '<a class="post" href="/posts/' + encodeURIComponent(p.slug) + '.html">' +
+          thumb +
           '<div class="date">' + d + '</div>' +
           '<h2>' + p.title + '</h2>' +
           '<p class="excerpt">' + p.excerpt + '</p>' +
