@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Sepakbola Terkini: Dari Liga Eropa Sampai Timnas Indonesia — Autoblog</title>
+  <meta name="description" content="Update Sepakbola Terkini: Dari Liga Eropa Sampai Timnas Indonesia">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #6D5AE6; --accent-2: #F97316;
+      --accent-grad: linear-gradient(135deg, #6D5AE6 0%, #F97316 100%);
+      --font-ui: 'Inter', system-ui, sans-serif;
+      --font-quote: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 16px; --maxw: 720px; --space: 24px;
+    }
+    html[data-theme="dark"] {
+      --bg: #0B0B0F; --bg-soft: #131318; --card: #16161D;
+      --border: rgba(255,255,255,.08); --border-strong: rgba(255,255,255,.16);
+      --fg: #F2F2F5; --fg-muted: #9A9AA5; --fg-faint: #6B6B76;
+      --glass: rgba(18,18,24,.72); --shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+    html[data-theme="light"] {
+      --bg: #FAFAFB; --bg-soft: #F0F0F4; --card: #FFFFFF;
+      --border: rgba(0,0,0,.08); --border-strong: rgba(0,0,0,.14);
+      --fg: #16161A; --fg-muted: #55555F; --fg-faint: #8A8A94;
+      --glass: rgba(255,255,255,.75); --shadow: 0 20px 60px rgba(0,0,0,.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-ui); font-size: 16px; line-height: 1.7;
+      color: var(--fg); background: var(--bg);
+      transition: background .4s ease, color .4s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(600px 400px at 85% -5%, rgba(109,90,230,.14), transparent 60%),
+        radial-gradient(500px 350px at -10% 15%, rgba(249,115,22,.10), transparent 60%);
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    a { color: inherit; }
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: var(--glass);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    }
+    .site-header .inner {
+      max-width: var(--maxw); margin: 0 auto; padding: 14px var(--space);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.03em;
+      text-decoration: none; color: var(--fg); display: flex; align-items: center; gap: 10px; }
+    .brand .logo {
+      width: 30px; height: 30px; border-radius: 9px;
+      background: var(--accent-grad); display: grid; place-items: center;
+      color: #fff; font-size: 15px;
+      box-shadow: 0 4px 14px rgba(109,90,230,.4);
+    }
+    .theme-toggle {
+      width: 40px; height: 40px; border-radius: 12px;
+      border: 1px solid var(--border-strong); background: var(--bg-soft);
+      color: var(--fg); font-size: 17px; cursor: pointer;
+      display: grid; place-items: center;
+      transition: transform .25s cubic-bezier(.4,0,.2,1), border-color .25s;
+    }
+    .theme-toggle:hover { transform: rotate(20deg) scale(1.05); border-color: var(--accent); }
+    .article { max-width: var(--maxw); margin: 0 auto; padding: 40px var(--space) 90px; }
+    .article .back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .85rem; font-weight: 500; color: var(--fg-muted);
+      text-decoration: none; margin-bottom: 28px;
+      padding: 8px 14px; border: 1px solid var(--border);
+      border-radius: 10px; background: var(--bg-soft);
+      transition: border-color .2s, color .2s;
+    }
+    .article .back:hover { border-color: var(--accent); color: var(--fg); }
+    .article h1 {
+      font-size: clamp(1.8rem, 5vw, 2.7rem); font-weight: 800;
+      letter-spacing: -0.04em; line-height: 1.15; margin-bottom: 14px;
+    }
+    .article .meta {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      font-family: var(--font-mono); font-size: .74rem; color: var(--fg-faint);
+      margin-bottom: 32px; padding-bottom: 22px; border-bottom: 1px solid var(--border);
+    }
+    .article .meta .tag {
+      color: var(--accent); border: 1px solid var(--border-strong);
+      padding: 3px 10px; border-radius: 999px; background: var(--bg-soft);
+    }
+    .article .content { font-size: 1.06rem; line-height: 1.85; color: var(--fg); }
+    .article .content figure {
+      margin: 0 0 28px; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article .content figure img { width: 100%; height: auto; display: block; }
+    .article .content h2 {
+      font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+      margin: 40px 0 14px; line-height: 1.3;
+    }
+    .article .content h3 {
+      font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em;
+      margin: 28px 0 10px;
+    }
+    .article .content p { margin-bottom: 20px; }
+    .article .content p:first-of-type::first-letter {
+      font-family: var(--font-quote); font-size: 3.4em; font-weight: 600;
+      float: left; line-height: .85; margin: 4px 10px 0 0; color: var(--accent);
+    }
+    .article .content ul, .article .content ol { margin: 0 0 20px 26px; }
+    .article .content li { margin-bottom: 10px; }
+    .article .content strong { font-weight: 700; }
+    .article .content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .site-footer {
+      border-top: 1px solid var(--border); padding: 28px var(--space);
+      text-align: center; font-size: .8rem; color: var(--fg-faint);
+    }
+    @media (max-width: 480px) { :root { --space: 18px; } }
+    @media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/"><span class="logo">✦</span> Autoblog</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">☀️</button>
+    </div>
+  </header>
+  <main class="article">
+    <a class="back" href="/">← Semua artikel</a>
+    <h1>Update Sepakbola Terkini: Dari Liga Eropa Sampai Timnas Indonesia</h1>
+    <div class="meta"><span class="tag">26 August 2026</span><span>9router ✓ [FREE]</span></div>
+    <div class="content"><p>Dunia sepakbola nggak pernah sepi dari kejutan dan drama menarik. Setiap hari selalu ada cerita baru yang bikin para penggemar bola nggak bisa lepas dari layar gadget mereka. Mulai dari transfer pemain bombastis, hasil pertandingan yang mengejutkan, sampai perkembangan kompetisi liga-liga top dunia.</p><p>Nah, buat kamu yang lagi nyari update terbaru soal dunia persepakbolaan, artikel ini bakal ngebahas berbagai berita penting yang lagi hangat dibicarakan. Yuk, simak rangkumannya!</p><h2>Pergerakan di Liga-Liga Top Eropa</h2><p>Liga-liga besar Eropa selalu jadi pusat perhatian pencinta sepakbola di seluruh dunia. Premier League, La Liga, Serie A, dan Bundesliga terus menghadirkan pertandingan-pertandingan sengit yang bikin penonton dag dig dug.</p><p>Persaingan di papan klasemen semakin ketat dengan berbagai klub berlomba-lomba meraih poin maksimal. Tim-tim papan atas seperti Manchester City, Arsenal, Real Madrid, dan Bayern Munich terus menunjukkan performa impresif mereka. Sementara itu, beberapa klub yang di awal musim diprediksi bakal dominan malah kesulitan menemukan ritme permainan terbaik mereka.</p><p>Yang bikin menarik, kompetisi tahun ini penuh dengan kejutan. Beberapa tim underdog berhasil mengalahkan klub-klub besar dan mencuri perhatian publik. Ini membuktikan kalau di sepakbola, apa aja bisa terjadi dan nggak ada yang namanya hasil pasti.<figure><img src="/images/20260826-055835_i0.jpg" alt="" loading="lazy" style="width:100%;height:auto;display:block;border-radius:14px;margin:0"><figcaption style="font-size:.78rem;color:var(--fg-faint);text-align:center;margin-top:8px;font-family:var(--font-mono);padding:0 4px">Ilustrasi</figcaption></figure></p><h2>Bursa Transfer dan Spekulasi Pemain</h2><p>Bursa transfer selalu jadi momen yang paling ditunggu-tunggu. Rumor kepindahan pemain bintang terus bermunculan dan bikin heboh media sosial. Klub-klub besar nggak main-main dalam merogoh kocek untuk mendatangkan pemain impian mereka.</p><p>Beberapa nama besar dikabarkan bakal pindah haluan di musim depan. Negosiasi dan tawar-menawar antara klub terus berlangsung di balik layar. Ada yang berhasil mendapat kesepakatan, ada juga yang gagal di menit-menit akhir karena berbagai alasan, mulai dari masalah finansial sampai permintaan gaji yang nggak masuk akal.</p><p>Pemain-pemain muda berbakat juga jadi incaran banyak klub. Mereka dianggap sebagai investasi jangka panjang yang bisa memberikan keuntungan besar di masa depan, baik dari sisi performa di lapangan maupun nilai jual kembali.</p><h2>Timnas Indonesia dan Sepakbola Domestik</h2><figure><img src="/images/20260826-055835_i1.jpg" alt="" loading="lazy" style="width:100%;height:auto;display:block;border-radius:14px;margin:0"><figcaption style="font-size:.78rem;color:var(--fg-faint);text-align:center;margin-top:8px;font-family:var(--font-mono);padding:0 4px">Ilustrasi</figcaption></figure><p>Kabar gembira terus berdatangan dari kubu Timnas Indonesia. Skuad Garuda menunjukkan perkembangan positif dalam berbagai kompetisi internasional. Performa para pemain terus membaik seiring dengan program pelatihan yang intensif dan kedatangan pemain-pemain keturunan berkualitas.</p><p>Di kompetisi domestik, Liga 1 Indonesia juga nggak kalah seru. Pertandingan-pertandingan berlangsung kompetitif dengan persaingan ketat di klasemen. Suporter setia terus memadati stadion untuk mendukung klub kesayangan mereka, menciptakan atmosfer yang luar biasa di setiap pertandingan.</p><p>Beberapa klub lokal juga mulai serius dalam mengembangkan akademi sepakbola mereka. Ini langkah bagus untuk mencetak bibit-bibit pemain muda berkualitas yang nantinya bisa mengharumkan nama Indonesia di kancah internasional.</p><h2>Kompetisi Eropa dan Turnamen Internasional</h2><p>Champions League, Europa League, dan kompetisi Eropa lainnya terus menghadirkan pertandingan-pertandingan berkelas. Klub-klub dari berbagai negara bertarung untuk meraih trofi bergengsi dan membuktikan kehebatan mereka di level kontinental.</p><p>Fase gugur kompetisi biasanya jadi yang paling menegangkan. Pertandingan home and away dengan sistem agregat skor membuat setiap gol jadi sangat berharga. Satu kesalahan kecil bisa berakibat fatal dan menghancurkan impian klub untuk melaju ke babak selanjutnya.<figure><img src="/images/20260826-055835_i2.png" alt="" loading="lazy" style="width:100%;height:auto;display:block;border-radius:14px;margin:0"><figcaption style="font-size:.78rem;color:var(--fg-faint);text-align:center;margin-top:8px;font-family:var(--font-mono);padding:0 4px">Ilustrasi</figcaption></figure></p><p>Selain itu, persiapan untuk turnamen-turnamen besar seperti Piala Dunia dan Piala Asia juga mulai dibicarakan. Negara-negara peserta mulai merancang strategi dan memanggil pemain-pemain terbaik mereka untuk mengikuti training camp intensif.</p><h2>Penutup</h2><p>Dunia sepakbola memang nggak pernah ada matinya. Selalu ada cerita baru, drama menarik, dan momen-momen yang bikin kita terpukau setiap harinya. Dari level klub sampai timnas, dari liga lokal sampai kompetisi internasional, semuanya punya daya tarik tersendiri.</p><p>Buat kamu yang nggak mau ketinggalan update terbaru soal sepakbola, pastikan selalu pantau terus perkembangan berita olahraga terpercaya. Jangan sampai kamu miss momen-momen penting dan pertandingan seru yang sayang banget untuk dilewatkan!</p><p><strong>Yuk, share artikel ini ke teman-teman sesama pecinta bola dan jangan lupa follow terus untuk update berita sepakbola terkini lainnya!</strong></p></div>
+  </main>
+  <footer class="site-footer">
+    <p>Autoblog · digerakkan AI · <span style="font-family:var(--font-mono);font-size:.74rem">ngopigame-blog.vercel.app</span></p>
+  </footer>
+  <script>
+    const root = document.documentElement;
+    const saved = localStorage.getItem('autoblog-theme');
+    if (saved) root.setAttribute('data-theme', saved);
+    const tg = document.getElementById('themeToggle');
+    tg.textContent = root.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    tg.addEventListener('click', () => {
+      const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', cur);
+      localStorage.setItem('autoblog-theme', cur);
+      tg.textContent = cur === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
